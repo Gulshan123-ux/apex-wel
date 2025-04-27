@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApexWell - Your Health Companion</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- <link rel="stylesheet" href="script.js"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   
+
+
+
+  <!-- Language Selector (ADDED) -->
+  <div class="language-selector">
+    <select id="languageSelect" style="width: 100px;">
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+      <option value="te">Telugu</option>
+      <option value="ta">Tamil</option>
+    </select>
+  </div>
+  
+  
+
+  <!-- Original Code Starts -->
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="Screenshot 2025-04-26 214451.png" alt="ApexWell Logo">
+        <span id="apexwellText">ApexWell</span>
+      </div>
+      <div class="nav-links">
+        <a href="#home" id="navHome">Home</a>
+        <a href="#services" id="navServices">Services</a>
+        <a href="#about" id="navAbout">About</a>
+        <a href="https://margcompusoft.com/m/bpl-card-in-rajasthan/?srsltid=AfmBOor2pXTLKpS5ssMxu8aiS9ywxjSwRdYs5QnsnQ7vPDJpxuvV7KuJ"id="schemes">schemes</a>
+        <a href="#contact" id="navContact">Contact</a>
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search...">
+          <button type="button" id="micButton" title="Search with voice">
+            <i class="fas fa-microphone"></i>
+          </button>
+          <button type="button" id="searchButton">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <a href="#register" class="get-started-btn" id="navGetStarted">Get Started</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 id="heroTitle">Reliable Health Tech:<br>Fast Solutions for a<br>Healthier Tomorrow</h1>
+          <a href="#register" class="get-started-btn" id="heroGetStarted">Get Started</a>
+        </div>
+        <div class="hero-image">
+          <img src="doctor.jpg" height="200" width="200" alt="Doctor with medical technology">
+        </div>
+      </div>
+    </section>
+
+    <section id="challenges">
+      <h2 id="challengesTitle">Key Challenges in Healthcare Today</h2>
+      <div class="challenges-grid">
+        <div class="challenge-card">
+          <div class="challenge-icon">
+            <i class="far fa-clock"></i>
+          </div>
+          <h3 id="challenge1Title">Delayed medical services</h3>
+          <p id="challenge1Desc">Long wait times for consultations & deliveries</p>
+        </div>
+        <div class="challenge-card">
+          <div class="challenge-icon">
+            <i class="far fa-eye"></i>
+          </div>
+          <h3 id="challenge2Title">Lack of transparency</h3>
+          <p id="challenge2Desc">Pricing & services are unclear</p>
+        </div>
+        <div class="challenge-card">
+          <div class="challenge-icon">
+            <i class="fas fa-network-wired"></i>
+          </div>
+          <h3 id="challenge3Title">Limited access to reliable solutions</h3>
+          <p id="challenge3Desc">Fragmented services create inefficiencies</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="registration">
+      <h2 id="chooseRole">Choose Your Role</h2>
+      <div class="registration-options">
+        <div class="option">
+          <i class="fas fa-user-injured"></i>
+          <h3 id="patientLogin">Login as Patient</h3>
+          <p id="patientDesc">Get your Patient ID and access healthcare services</p>
+          <a href="patient-registration.html" class="btn" id="registerPatient">Register as Patient</a>
+        </div>
+        <div class="option">
+          <i class="fas fa-user-injured"></i>
+          <h3>Login as BPL Patient</h3>
+          <p>Get your Patient ID and access healthcare services</p>
+          <a href="bpl-registration.html" class="btn">Register as BPL Patient</a>
+         
+        </div>
+        <div class="option">
+          <i class="fas fa-pills"></i>
+          <h3 id="chemistLogin">Login as Chemist</h3>
+          <p id="chemistDesc">Get your Chemist Number and manage your pharmacy</p>
+          <a href="chemist-registration.html" class="btn" id="registerChemist">Register as Chemist</a>
+        </div>
+        <div class="option">
+          <i class="fas fa-user-md"></i>
+          <h3 id="doctorLogin">Login as Doctor</h3>
+          <p id="doctorDesc">Get your Doctor ID and connect with patients</p>
+          <a href="doctor-registration.html" class="btn" id="registerDoctor">Register as Doctor</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 id="footerApexwell">ApexWell</h3>
+        <p id="footerTagline">Your trusted healthcare companion</p>
+      </div>
+      <div class="footer-section">
+        <h3 id="footerQuickLinks">Quick Links</h3>
+        <a href="#home" id="footerHome">Home</a>
+        <a href="#services" id="footerServices">Services</a>
+        <a href="#about" id="footerAbout">About</a>
+        <a href="#contact" id="footerContact">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h3 id="footerContactUs">Contact Us</h3>
+        <p id="footerEmail">Email: support@apexwell.com</p>
+        <p id="footerPhone">Phone: +91 8619152422</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p id="footerCopyright">&copy; 2024 ApexWell. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Language Switch Script -->
+  <script >
+    const translations = {
+      en: {
+        apexwellText: "ApexWell",
+        navHome: "Home",
+        navServices: "Services",
+        navAbout: "About",
+        navContact: "Contact",
+        navGetStarted: "Get Started",
+        heroTitle: "Reliable Health Tech:<br>Fast Solutions for a<br>Healthier Tomorrow",
+        heroGetStarted: "Get Started",
+        challengesTitle: "Key Challenges in Healthcare Today",
+        challenge1Title: "Delayed medical services",
+        challenge1Desc: "Long wait times for consultations & deliveries",
+        challenge2Title: "Lack of transparency",
+        challenge2Desc: "Pricing & services are unclear",
+        challenge3Title: "Limited access to reliable solutions",
+        challenge3Desc: "Fragmented services create inefficiencies",
+        chooseRole: "Choose Your Role",
+        patientLogin: "Login as Patient",
+        patientDesc: "Get your Patient ID and access healthcare services",
+        registerPatient: "Register as Patient",
+        chemistLogin: "Login as Chemist",
+        chemistDesc: "Get your Chemist Number and manage your pharmacy",
+        registerChemist: "Register as Chemist",
+        doctorLogin: "Login as Doctor",
+        doctorDesc: "Get your Doctor ID and connect with patients",
+        registerDoctor: "Register as Doctor",
+        footerApexwell: "ApexWell",
+        footerTagline: "Your trusted healthcare companion",
+        footerQuickLinks: "Quick Links",
+        footerHome: "Home",
+        footerServices: "Services",
+        footerAbout: "About",
+        footerContact: "Contact",
+        footerContactUs: "Contact Us",
+        footerEmail: "Email: support@apexwell.com",
+        footerPhone: "Phone: +91 8619152422",
+        footerCopyright: "© 2024 ApexWell. All rights reserved."
+      },
+      hi: {
+        apexwellText: "एपेक्सवेल",
+        navHome: "होम",
+        navServices: "सेवाएं",
+        navAbout: "हमारे बारे में",
+        navContact: "संपर्क करें",
+        navGetStarted: "शुरू करें",
+        heroTitle: "विश्वसनीय स्वास्थ्य तकनीक:<br>तेजी से समाधान<br>स्वस्थ कल के लिए",
+        heroGetStarted: "शुरू करें",
+        challengesTitle: "आज के स्वास्थ्य देखभाल में प्रमुख चुनौतियाँ",
+        challenge1Title: "चिकित्सा सेवाओं में देरी",
+        challenge1Desc: "परामर्श और डिलीवरी के लिए लंबा इंतजार",
+        challenge2Title: "पारदर्शिता की कमी",
+        challenge2Desc: "मूल्य निर्धारण और सेवाएं अस्पष्ट हैं",
+        challenge3Title: "विश्वसनीय समाधानों की कमी",
+        challenge3Desc: "बिखरी हुई सेवाएं अक्षमता लाती हैं",
+        chooseRole: "अपनी भूमिका चुनें",
+        patientLogin: "मरीज के रूप में लॉगिन करें",
+        patientDesc: "अपना मरीज आईडी प्राप्त करें और सेवाओं का लाभ उठाएं",
+        registerPatient: "मरीज के रूप में पंजीकरण करें",
+        chemistLogin: "केमिस्ट के रूप में लॉगिन करें",
+        chemistDesc: "अपना केमिस्ट नंबर प्राप्त करें और अपनी फार्मेसी प्रबंधित करें",
+        registerChemist: "केमिस्ट के रूप में पंजीकरण करें",
+        doctorLogin: "डॉक्टर के रूप में लॉगिन करें",
+        doctorDesc: "अपना डॉक्टर आईडी प्राप्त करें और मरीजों से जुड़ें",
+        registerDoctor: "डॉक्टर के रूप में पंजीकरण करें",
+        footerApexwell: "एपेक्सवेल",
+        footerTagline: "आपका विश्वसनीय स्वास्थ्य साथी",
+        footerQuickLinks: "त्वरित लिंक",
+        footerHome: "होम",
+        footerServices: "सेवाएं",
+        footerAbout: "हमारे बारे में",
+        footerContact: "संपर्क करें",
+        footerContactUs: "संपर्क करें",
+        footerEmail: "ईमेल: support@apexwell.com",
+        footerPhone: "फोन: +91 8619152422",
+        footerCopyright: "© 2024 एपेक्सवेल. सर्वाधिकार सुरक्षित।"
+      },
+      te: {
+        apexwellText: "ApexWell",
+        // Telugu translations can be filled later
+      },
+      ta: {
+        apexwellText: "ApexWell",
+        // Tamil translations can be filled later
+      }
+    };
+
+    document.getElementById('languageSelect').addEventListener('change', function () {
+      const lang = this.value;
+      const currentTranslations = translations[lang];
+      if (!currentTranslations) return;
+
+      for (const key in currentTranslations) {
+        const el = document.getElementById(key);
+        if (el) {
+          el.innerHTML = currentTranslations[key];
+        }
+      }
+    });
+  </script>
+  
+
+  <style>
+    .language-selector {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 9999;
+    }
+    .language-selector select {
+      padding: 5px 10px;
+      font-size: 16px;
+    }
+  </style>
+<script>
+    // Voice Search Implementation
+    const searchInput = document.getElementById('searchInput');
+    const micButton = document.getElementById('micButton');
+
+    // Check if browser supports speech recognition
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    
+    if (SpeechRecognition) {
+      const recognition = new SpeechRecognition();
+      
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      
+      micButton.addEventListener('click', () => {
+        // If recognition is already active, stop it
+        if (micButton.classList.contains('listening')) {
+          recognition.stop();
+          return;
+        }
+        
+        // Clear the search input
+        searchInput.value = '';
+        
+        // Start listening
+        try {
+          recognition.start();
+          micButton.classList.add('listening');
+          micButton.style.color = '#ff0000'; // Red color when listening
+        } catch (err) {
+          console.error('Error starting speech recognition:', err);
+        }
+      });
+      
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        searchInput.value = transcript;
+        // Trigger search here if needed
+      };
+      
+      recognition.onend = () => {
+        micButton.classList.remove('listening');
+        micButton.style.color = ''; // Reset color
+      };
+      
+      recognition.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+        micButton.classList.remove('listening');
+        micButton.style.color = '';
+      };
+    } else {
+      micButton.style.display = 'none'; // Hide mic button if speech recognition is not supported
+      console.log('Speech recognition not supported');
+    }
+  </script>
+  </body>
+</html>

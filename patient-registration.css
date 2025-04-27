@@ -1,0 +1,512 @@
+/* Base theme (Light) */
+:root {
+    --primary-color: #1e40af;
+    --secondary-color: #0ea5e9;
+    --accent-color: #f43f5e;
+    --success-color: #22c55e;
+    --warning-color: #eab308;
+    --light-bg: #f0f9ff;
+    --text-color: #1e293b;
+    --border-color: #e2e8f0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --card-bg: white;
+    --input-bg: white;
+    --hover-bg: rgba(14, 165, 233, 0.1);
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+    --primary-color: #60a5fa;
+    --secondary-color: #38bdf8;
+    --accent-color: #fb7185;
+    --success-color: #4ade80;
+    --warning-color: #fbbf24;
+    --light-bg: #1e293b;
+    --text-color: #e2e8f0;
+    --border-color: #475569;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --card-bg: #0f172a;
+    --input-bg: #1e293b;
+    --hover-bg: rgba(56, 189, 248, 0.1);
+}
+
+/* Theme transition */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Apply theme colors to body */
+/* .language-selector{
+    display: flex;
+    align-items: bottom 20px; */
+#languageswitcher{
+    margin-bottom: 10px;
+    display: column;
+    align-items: 10px;
+    
+
+}
+body {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+}
+
+.patient-registration {
+    background: linear-gradient(135deg, var(--light-bg) 0%, var(--card-bg) 100%);
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 6rem auto 2rem;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.registration-form {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--shadow-color);
+    border: 1px solid var(--border-color);
+}
+
+.registration-form h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.registration-form h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
+    outline: none;
+}
+
+.form-group textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.medical-history {
+    display: grid;
+    gap: 1rem;
+    background: var(--light-bg);
+    padding: 1.2rem;
+    border-radius: 8px;
+    border: 1px dashed var(--border-color);
+}
+
+.checkbox-group {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.checkbox-group:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px var(--shadow-color);
+    background: var(--hover-bg);
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.6rem;
+    cursor: pointer;
+}
+
+.terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    background: var(--light-bg);
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1.5rem;
+}
+
+.terms input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-top: 0.2rem;
+    cursor: pointer;
+}
+
+.terms label {
+    font-size: 0.875rem;
+    font-weight: normal;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 0.938rem;
+    margin-top: 1.2rem;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
+}
+
+.submit-btn:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.benefits {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    height: fit-content;
+    position: sticky;
+    top: 6rem;
+}
+
+.benefits h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.3rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.benefits h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--success-color);
+    border-radius: 2px;
+}
+
+.benefits-list {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.benefit {
+    background: var(--light-bg);
+    padding: 1.2rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.benefit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px var(--shadow-color);
+    background: var(--hover-bg);
+}
+
+.benefit i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.benefit h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.benefit p {
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 0.875rem;
+}
+
+.get-started-btn {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.get-started-btn:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px var(--shadow-color);
+    background: var(--hover-bg);
+}
+
+.theme-toggle-btn i {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.light-icon {
+    color: #fbbf24;
+    display: none;
+}
+
+.dark-icon {
+    color: #60a5fa;
+    display: block;
+}
+
+[data-theme="dark"] .light-icon {
+    display: block;
+}
+
+[data-theme="dark"] .dark-icon {
+    display: none;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--card-bg);
+    margin: 10% auto;
+    padding: 2rem;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.close-modal:hover {
+    color: var(--accent-color);
+}
+
+.modal h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.modal h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+}
+
+/* User Type Selection Cards */
+.user-type-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.user-type-card {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.user-type-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color);
+    box-shadow: 0 8px 15px var(--shadow-color);
+    background: var(--hover-bg);
+}
+
+.user-type-card i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    background: var(--card-bg);
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.user-type-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.user-type-card p {
+    color: var(--text-color);
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .patient-registration {
+        grid-template-columns: 1fr;
+        margin-top: 4rem;
+    }
+    
+    .medical-history {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits {
+        position: static;
+        margin-top: 2rem;
+    }
+
+    .modal-content {
+        width: 90%;
+        margin: 20% auto;
+        padding: 1.5rem;
+    }
+
+    .user-type-options {
+        grid-template-columns: 1fr;
+    }
+
+    .user-type-card {
+        padding: 1.2rem;
+    }
+
+    .user-type-card i {
+        font-size: 2rem;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .theme-toggle-btn {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .theme-toggle-btn i {
+        font-size: 1rem;
+    }
+} 

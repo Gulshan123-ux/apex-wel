@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration - ApexWell</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="patient-registration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- User Type Selection Modal -->
+    <div id="userTypeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="chooseAccountType">Choose Your Account Type</h2>
+            <div class="user-type-options">
+                <div class="user-type-card" data-type="patient">
+                    <i class="fas fa-user-injured"></i>
+                    <h3 id="patientType">Patient</h3>
+                    <p id="patientDesc">Book appointments and manage your health records</p>
+                </div>
+                <div class="user-type-card" data-type="doctor">
+                    <i class="fas fa-user-md"></i>
+                    <h3 id="doctorType">Doctor</h3>
+                    <p id="doctorDesc">Connect with patients and manage your practice</p>
+                </div>
+                <div class="user-type-card" data-type="chemist">
+                    <i class="fas fa-pills"></i>
+                    <h3 id="chemistType">Chemist</h3>
+                    <p id="chemistDesc">Manage your pharmacy and serve patients</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><h1>ApexWell</h1></a>
+            </div>
+            <div class="nav-links">
+                <div class="theme-toggle">
+                    <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                        <i class="fas fa-sun light-icon"></i>
+                        <i class="fas fa-moon dark-icon"></i>
+                    </button>
+                </div>
+                <a href="index.html" id="homeLink">Home</a>
+                <a href="#contact" id="contactLink">Contact</a>
+
+                <!-- Language Selector -->
+                <select id="languageSwitcher">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी</option>
+                    <option value="ta">தமிழ்</option>
+                </select>
+
+                <button class="get-started-btn" id="submitButton">Get Started</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="patient-registration">
+        <section class="registration-form">
+            <h2 id="patientRegistration">Patient Registration</h2>
+            <form id="patientForm">
+                <div class="form-group">
+                    <label for="fullName" id="labelFullName">Full Name</label>
+                    <input type="text" id="fullNameInput" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="dateOfBirth" id="labelDOB">Date of Birth</label>
+                    <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender" id="labelGender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">{SelectGender}</option>
+                        <option value="male" id="optionMale">Male</option>
+                        <option value="female" id="optionFemale">Female</option>
+                        <option value="other" id="optionOther">Other</option>
+                        <option value="prefer-not-to-say" id="optionPreferNotSay">Prefer not to say</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email" id="labelEmail">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" id="labelPhone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address" id="labelAddress">Address</label>
+                    <textarea id="address" name="address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="bloodGroup" id="labelBloodGroup">Blood Group</label>
+                    <select id="bloodGroup" name="bloodGroup" required>
+                        <option value="">{SelectBloodGroup}</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label id="medicalHistoryLabel">Medical History</label>
+                    <div class="medical-history">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="diabetes" name="medicalHistory" value="diabetes">
+                            <label for="diabetes">Diabetes</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="hypertension" name="medicalHistory" value="hypertension">
+                            <label for="hypertension">Hypertension</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="asthma" name="medicalHistory" value="asthma">
+                            <label for="asthma">Asthma</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="allergies" name="medicalHistory" value="allergies">
+                            <label for="allergies">Allergies</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="emergencyContact" id="labelEmergencyContact">Emergency Contact Name</label>
+                    <input type="text" id="emergencyContact" name="emergencyContact" required>
+                </div>
+                <div class="form-group">
+                    <label for="emergencyPhone" id="labelEmergencyPhone">Emergency Contact Number</label>
+                    <input type="tel" id="emergencyPhone" name="emergencyPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" id="labelPassword">Create Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword" id="labelConfirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <div class="form-group terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms" id="labelTerms">I agree to the terms and conditions and verify that all information provided is accurate</label>
+                </div>
+                <button type="submit" class="btn submit-btn" id="submitButton">Submit Registration</button>
+            </form>
+        </section>
+
+        <section class="benefits">
+            <h3 id="patientBenefits">Patient Benefits</h3>
+            <div class="benefits-list">
+                <div class="benefit">
+                    <i class="fas fa-calendar-check"></i>
+                    <h4 id="easyAppointmentBooking">Easy Appointment Booking</h4>
+                    <p id="bookAppointments">Book appointments with doctors at your convenience</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-file-medical"></i>
+                    <h4 id="digitalHealthRecords">Digital Health Records</h4>
+                    <p id="accessMedicalHistory">Access your medical history anytime, anywhere</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-prescription-bottle-alt"></i>
+                    <h4 id="medicineReminders">Medicine Reminders</h4>
+                    <p id="getMedicineReminders">Get timely reminders for your medications</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ApexWell</h3>
+                <p id="trustedHealthcareCompanion">Your trusted healthcare companion</p>
+            </div>
+            <div class="footer-section">
+                <h3 id="quickLinks">Quick Links</h3>
+                <a href="index.html" id="homeLink">Home</a>
+                <a href="#contact" id="contactLink">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3 id="contactUs">Contact Us</h3>
+                <p>Email: support@apexwell.com</p>
+                <p>Phone: +91 1234567890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ApexWell. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="patient-registration.js"></script>
+    <script src="language.js"></script>
+    <script>
+        // Translation Object
+        const translations = {
+          en: {
+            chooseAccountType: "Choose Your Account Type",
+            patientType: "Patient",
+            patientDesc: "Book appointments and manage your health records",
+            doctorType: "Doctor",
+            doctorDesc: "Connect with patients and manage your practice",
+            chemistType: "Chemist",
+            chemistDesc: "Manage your pharmacy and serve patients",
+            homeLink: "Home",
+            contactLink: "Contact",
+            patientRegistration: "Patient Registration",
+            labelFullName: "Full Name",
+            labelDOB: "Date of Birth",
+            labelGender: "Gender",
+            selectGender: "Select Gender",
+            optionMale: "Male",
+            optionFemale: "Female",
+            optionOther: "Other",
+            optionPreferNotSay: "Prefer not to say",
+            labelEmail: "Email",
+            labelPhone: "Phone Number",
+            labelAddress: "Address",
+            labelBloodGroup: "Blood Group",
+            selectBloodGroup: "Select Blood Group",
+            medicalHistoryLabel: "Medical History",
+            labelEmergencyContact: "Emergency Contact Name",
+            labelEmergencyPhone: "Emergency Contact Number",
+            labelPassword: "Create Password",
+            labelConfirmPassword: "Confirm Password",
+            labelTerms: "I agree to the terms and conditions and verify that all information provided is accurate",
+            submitButton: "Submit Registration",
+            patientBenefits: "Patient Benefits",
+            easyAppointmentBooking: "Easy Appointment Booking",
+            bookAppointments: "Book appointments with doctors at your convenience",
+            digitalHealthRecords: "Digital Health Records",
+            accessMedicalHistory: "Access your medical history anytime, anywhere",
+            medicineReminders: "Medicine Reminders",
+            getMedicineReminders: "Get timely reminders for your medications",
+            trustedHealthcareCompanion: "Your trusted healthcare companion",
+            quickLinks: "Quick Links",
+            contactUs: "Contact Us"
+          },
+          hi: {
+            chooseAccountType: "अपना खाता प्रकार चुनें",
+            patientType: "मरीज",
+            patientDesc: "अपॉइंटमेंट बुक करें और अपने स्वास्थ्य रिकॉर्ड प्रबंधित करें",
+            doctorType: "डॉक्टर",
+            doctorDesc: "मरीजों से जुड़ें और अपना अभ्यास प्रबंधित करें",
+            chemistType: "केमिस्ट",
+            chemistDesc: "अपनी फार्मेसी प्रबंधित करें और मरीजों की सेवा करें",
+            homeLink: "होम",
+            contactLink: "संपर्क करें",
+            patientRegistration: "मरीज पंजीकरण",
+            labelFullName: "पूरा नाम",
+            labelDOB: "जन्म तिथि",
+            labelGender: "लिंग",
+            selectGender: "लिंग चुनें",
+            optionMale: "पुरुष",
+            optionFemale: "महिला",
+            optionOther: "अन्य",
+            optionPreferNotSay: "कहना पसंद नहीं",
+            labelEmail: "ईमेल",
+            labelPhone: "फोन नंबर",
+            labelAddress: "पता",
+            labelBloodGroup: "ब्लड ग्रुप",
+            selectBloodGroup: "ब्लड ग्रुप चुनें",
+            medicalHistoryLabel: "चिकित्सा इतिहास",
+            labelEmergencyContact: "आपातकालीन संपर्क नाम",
+            labelEmergencyPhone: "आपातकालीन संपर्क नंबर",
+            labelPassword: "पासवर्ड बनाएं",
+            labelConfirmPassword: "पासवर्ड की पुष्टि करें",
+            labelTerms: "मैं शर्तों से सहमत हूं और दी गई सभी जानकारी को सही प्रमाणित करता हूं",
+            submitButton: "पंजीकरण सबमिट करें",
+            patientBenefits: "मरीज लाभ",
+            easyAppointmentBooking: "सरल अपॉइंटमेंट बुकिंग",
+            bookAppointments: "डॉक्टरों से सुविधा अनुसार अपॉइंटमेंट बुक करें",
+            digitalHealthRecords: "डिजिटल स्वास्थ्य रिकॉर्ड",
+            accessMedicalHistory: "कहीं भी, कभी भी अपने चिकित्सा इतिहास तक पहुंचें",
+            medicineReminders: "दवा अनुस्मारक",
+            getMedicineReminders: "अपनी दवाओं के समय पर अनुस्मारक प्राप्त करें",
+            trustedHealthcareCompanion: "आपका विश्वसनीय स्वास्थ्य साथी",
+            quickLinks: "त्वरित लिंक",
+            contactUs: "हमसे संपर्क करें"
+          },
+          ta: {
+            chooseAccountType: "உங்கள் கணக்கு வகையைத் தேர்ந்தெடுக்கவும்",
+            patientType: "நோயாளர்",
+            patientDesc: "நியமனங்களை பதிவு செய்யவும் மற்றும் உங்கள் மருத்துவ பதிவுகளை நிர்வகிக்கவும்",
+            doctorType: "மருத்துவர்",
+            doctorDesc: "நோயாளர்களுடன் இணைந்து உங்கள் பயிற்சியை நிர்வகிக்கவும்",
+            chemistType: "மருந்துக் கடை",
+            chemistDesc: "உங்கள் மருந்தகத்தை நிர்வகிக்கவும் மற்றும் நோயாளர்களை சேவை செய்யவும்",
+            homeLink: "முகப்பு",
+            contactLink: "தொடர்பு",
+            patientRegistration: "நோயாளர் பதிவு",
+            labelFullName: "முழு பெயர்",
+            labelDOB: "பிறந்த தேதி",
+            labelGender: "பாலினம்",
+            selectGender: "பாலினத்தைத் தேர்ந்தெடுக்கவும்",
+            optionMale: "ஆண்",
+            optionFemale: "பெண்",
+            optionOther: "மற்றவை",
+            optionPreferNotSay: "கூற விருப்பமில்லை",
+            labelEmail: "மின்னஞ்சல்",
+            labelPhone: "தொலைபேசி எண்",
+            labelAddress: "முகவரி",
+            labelBloodGroup: "இரத்த வகை",
+            selectBloodGroup: "இரத்த வகையைத் தேர்ந்தெடுக்கவும்",
+            medicalHistoryLabel: "மருத்துவ வரலாறு",
+            labelEmergencyContact: "அவசர தொடர்பு பெயர்",
+            labelEmergencyPhone: "அவசர தொலைபேசி எண்",
+            labelPassword: "கடவுச்சொல் உருவாக்கவும்",
+            labelConfirmPassword: "கடவுச்சொல்லை உறுதிப்படுத்தவும்",
+            labelTerms: "நான் விதிமுறைகளை ஏற்கிறேன் மற்றும் வழங்கிய அனைத்து தகவலும் சரியானது என்பதை உறுதி செய்கிறேன்",
+            submitButton: "பதிவை சமர்ப்பிக்கவும்",
+            patientBenefits: "நோயாளர் நன்மைகள்",
+            easyAppointmentBooking: "எளிய நேரமுடிவு பதிவு",
+            bookAppointments: "மருத்துவர்களுடன் நியமனங்களை பதிவு செய்யவும்",
+            digitalHealthRecords: "டிஜிட்டல் மருத்துவ பதிவுகள்",
+            accessMedicalHistory: "எங்கும் எப்போதும் உங்கள் மருத்துவ வரலாற்றை அணுகவும்",
+            medicineReminders: "மருந்து நினைவூட்டல்கள்",
+            getMedicineReminders: "உங்கள் மருந்துகளுக்கான நினைவூட்டல்களைப் பெறுங்கள்",
+            trustedHealthcareCompanion: "உங்கள் நம்பகமான மருத்துவ துணை",
+            quickLinks: "விரைவு இணைப்புகள்",
+            contactUs: "எங்களை தொடர்புகொள்ள"
+          }
+        };
+        
+        // Language Switcher
+        const languageSwitcher = document.getElementById('languageSwitcher');
+        
+        languageSwitcher.addEventListener('change', (e) => {
+          const selectedLang = e.target.value;
+          translatePage(selectedLang);
+        });
+        
+        // Function to change text
+        function translatePage(lang) {
+          const elementsToTranslate = Object.keys(translations[lang]);
+          elementsToTranslate.forEach(id => {
+            const element = document.getElementById(id);
+            if (element) {
+              element.textContent = translations[lang][id];
+            }
+          });
+        }
+        </script>
+        
+</body>
+</html>

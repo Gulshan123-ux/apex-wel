@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctor Registration - ApexWell</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="doctor-registration.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Language Selector -->
+  <nav>
+    <div class="logo">
+      <a href="index.html"><h1>ApexWell</h1></a>
+    </div>
+    <div class="nav-links">
+      <select id="languageSelect">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="te">తెలుగు</option>
+        <option value="ta">தமிழ்</option>
+      </select>
+      <a href="index.html" data-key="home">Home</a>
+      <a href="#contact" data-key="contact">Contact</a>
+      <button class="get-started-btn" data-key="getStarted">Get Started</button>
+    </div>
+  </nav>
+
+  <main class="doctor-registration">
+    <section class="registration-form">
+      <h2 data-key="doctorRegistration">Doctor Registration</h2>
+      <form id="doctorForm">
+        <div class="form-group">
+          <label for="fullName" data-key="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" required />
+        </div>
+
+        <div class="form-group">
+          <label for="specialization" data-key="specialization">Specialization</label>
+          <select id="specialization" name="specialization" required>
+            <option value="">Select Specialization</option>
+            <option value="Cardiologist">Cardiologist</option>
+            <option value="Dermatologist">Dermatologist</option>
+            <option value="Neurologist">Neurologist</option>
+            <option value="Pediatrician">Pediatrician</option>
+            <option value="General Physician">General Physician</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="medicalLicense" data-key="medicalLicense">Medical License Number</label>
+          <input type="text" id="medicalLicense" name="medicalLicense" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email" data-key="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone" data-key="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+
+        <div class="form-group">
+          <label for="experience" data-key="experience">Years of Experience</label>
+          <input type="number" id="experience" name="experience" min="0" required />
+        </div>
+
+        <div class="form-group">
+          <label data-key="documentVerification">Document Verification</label>
+          <div class="document-upload">
+            <div class="upload-item">
+              <label for="licenseDoc">Medical License Certificate</label>
+              <input type="file" id="licenseDoc" name="licenseDoc" accept=".pdf,.jpg,.jpeg,.png" required />
+            </div>
+            <div class="upload-item">
+              <label for="idProof">Government ID Proof</label>
+              <input type="file" id="idProof" name="idProof" accept=".pdf,.jpg,.jpeg,.png" required />
+            </div>
+            <div class="upload-item">
+              <label for="degreeCert">Medical Degree Certificate</label>
+              <input type="file" id="degreeCert" name="degreeCert" accept=".pdf,.jpg,.jpeg,.png" required />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="clinicAddress" data-key="clinicAddress">Clinic/Hospital Address</label>
+          <textarea id="clinicAddress" name="clinicAddress" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="consultationFee" data-key="consultationFee">Consultation Fee (₹)</label>
+          <input type="number" id="consultationFee" name="consultationFee" min="0" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password" data-key="createPassword">Create Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword" data-key="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required />
+        </div>
+
+        <div class="form-group terms">
+          <input type="checkbox" id="terms" name="terms" required />
+          <label for="terms" data-key="terms">I agree to the terms and conditions and verify that all information provided is accurate</label>
+        </div>
+
+        <button type="submit" class="btn submit-btn" data-key="submitRegistration">Submit Registration</button>
+      </form>
+    </section>
+
+    <section class="verification-process">
+      <h3 data-key="verificationProcess">Verification Process</h3>
+      <div class="process-steps">
+        <div class="step">
+          <img src="doctor.jpg" alt="Doctor" class="doctor-image" />
+          <i class="fas fa-file-upload"></i>
+          <h4 data-key="documentUpload">Document Upload</h4>
+          <p>Upload all required documents for verification</p>
+        </div>
+        <div class="step">
+          <i class="fas fa-search"></i>
+          <h4 data-key="verificationCheck">Verification Check</h4>
+          <p>Our team will verify your documents within 48 hours</p>
+        </div>
+        <div class="step">
+          <i class="fas fa-check-circle"></i>
+          <h4 data-key="accountActivation">Account Activation</h4>
+          <p>Once verified, your account will be activated</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>ApexWell</h3>
+        <p>Your trusted healthcare companion</p>
+      </div>
+      <div class="footer-section">
+        <h3 data-key="quickLinks">Quick Links</h3>
+        <a href="index.html" data-key="home">Home</a>
+        <a href="#contact" data-key="contact">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h3 data-key="contactUs">Contact Us</h3>
+        <p>Email: support@apexwell.com</p>
+        <p>Phone: +91 1234567890</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 ApexWell. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Language Switching -->
+  <script>
+    const translations = {
+      en: {
+        doctorRegistration: "Doctor Registration",
+        fullName: "Full Name",
+        specialization: "Specialization",
+        medicalLicense: "Medical License Number",
+        email: "Email",
+        phone: "Phone Number",
+        experience: "Years of Experience",
+        documentVerification: "Document Verification",
+        clinicAddress: "Clinic/Hospital Address",
+        consultationFee: "Consultation Fee (₹)",
+        createPassword: "Create Password",
+        confirmPassword: "Confirm Password",
+        submitRegistration: "Submit Registration",
+        verificationProcess: "Verification Process",
+        documentUpload: "Document Upload",
+        verificationCheck: "Verification Check",
+        accountActivation: "Account Activation",
+        terms: "I agree to the terms and conditions and verify that all information provided is accurate",
+        home: "Home",
+        contact: "Contact",
+        getStarted: "Get Started",
+        quickLinks: "Quick Links",
+        contactUs: "Contact Us"
+      },
+      hi: {
+        doctorRegistration: "डॉक्टर पंजीकरण",
+        fullName: "पूरा नाम",
+        specialization: "विशेषज्ञता",
+        medicalLicense: "चिकित्सा लाइसेंस संख्या",
+        email: "ईमेल",
+        phone: "फ़ोन नंबर",
+        experience: "अनुभव (वर्षों में)",
+        documentVerification: "दस्तावेज़ सत्यापन",
+        clinicAddress: "क्लिनिक/अस्पताल का पता",
+        consultationFee: "परामर्श शुल्क (₹)",
+        createPassword: "पासवर्ड बनाएं",
+        confirmPassword: "पासवर्ड की पुष्टि करें",
+        submitRegistration: "पंजीकरण सबमिट करें",
+        verificationProcess: "सत्यापन प्रक्रिया",
+        documentUpload: "दस्तावेज़ अपलोड",
+        verificationCheck: "सत्यापन जांच",
+        accountActivation: "खाता सक्रियण",
+        terms: "मैं नियमों और शर्तों से सहमत हूं और पुष्टि करता हूं कि दी गई सभी जानकारी सटीक है",
+        home: "होम",
+        contact: "संपर्क करें",
+        getStarted: "शुरू करें",
+        quickLinks: "त्वरित लिंक",
+        contactUs: "संपर्क करें"
+      },
+      te: {
+        doctorRegistration: "డాక్టర్ నమోదు",
+        fullName: "పూర్తి పేరు",
+        specialization: "ప్రత్యేకత",
+        medicalLicense: "మెడికల్ లైసెన్స్ నంబర్",
+        email: "ఈమెయిల్",
+        phone: "ఫోన్ నంబర్",
+        experience: "అనుభవం (సంవత్సరాలు)",
+        documentVerification: "పత్రాల ధృవీకరణ",
+        clinicAddress: "క్లినిక్/హాస్పిటల్ చిరునామా",
+        consultationFee: "సలహా రుసుము (₹)",
+        createPassword: "పాస్వర్డ్ సృష్టించండి",
+        confirmPassword: "పాస్వర్డ్ ధృవీకరించండి",
+        submitRegistration: "నమోదు సమర్పించండి",
+        verificationProcess: "ధృవీకరణ ప్రక్రియ",
+        documentUpload: "పత్రం అప్లోడ్",
+        verificationCheck: "ధృవీకరణ తనిఖీ",
+        accountActivation: "ఖాతా సక్రియత",
+        terms: "నేను నిబంధనలు అంగీకరిస్తున్నాను మరియు అందించిన సమాచారం ఖచ్చితమైనదని ధృవీకరిస్తున్నాను",
+        home: "హోమ్",
+        contact: "సంప్రదించండి",
+        getStarted: "ప్రారంభించండి",
+        quickLinks: "త్వరిత లింకులు",
+        contactUs: "మమ్మల్ని సంప్రదించండి"
+      },
+      ta: {
+        doctorRegistration: "மருத்துவர் பதிவு",
+        fullName: "முழுப்பெயர்",
+        specialization: "துறை",
+        medicalLicense: "மருத்துவ உரிமை எண்",
+        email: "மின்னஞ்சல்",
+        phone: "தொலைபேசி எண்",
+        experience: "அனுபவம் (ஆண்டுகள்)",
+        documentVerification: "ஆவண சரிபார்ப்பு",
+        clinicAddress: "மருத்துவமனை முகவரி",
+        consultationFee: "ஆலோசனை கட்டணம் (₹)",
+        createPassword: "கடவுச்சொல் உருவாக்கு",
+        confirmPassword: "கடவுச்சொல் உறுதிப்படுத்து",
+        submitRegistration: "பதிவை சமர்ப்பிக்கவும்",
+        verificationProcess: "சரிபார்ப்பு செயல்முறை",
+        documentUpload: "ஆவண பதிவேற்றம்",
+        verificationCheck: "சரிபார்ப்பு சோதனை",
+        accountActivation: "கணக்கு செயற்படுத்தல்",
+        terms: "நிபந்தனைகளை ஏற்று, வழங்கிய தகவல் சரியானது என்பதைக் உறுதிசெய்கிறேன்",
+        home: "முகப்பு",
+        contact: "தொடர்பு கொள்ளவும்",
+        getStarted: "தொடங்குங்கள்",
+        quickLinks: "விரைவு இணைப்புகள்",
+        contactUs: "எங்களை தொடர்புகொள்ளுங்கள்"
+      }
+    };
+
+    document.getElementById("languageSelect").addEventListener("change", function() {
+      const selectedLang = this.value;
+      const elements = document.querySelectorAll("[data-key]");
+      elements.forEach(element => {
+        const key = element.getAttribute("data-key");
+        if (translations[selectedLang] && translations[selectedLang][key]) {
+          element.textContent = translations[selectedLang][key];
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
